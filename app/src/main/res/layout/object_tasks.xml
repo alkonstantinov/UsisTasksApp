@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlBackgroud"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.rey.material.widget.Button
+        android:id="@+id/bTaskDo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="Стартирай"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/taskName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/bTaskDo"
+        android:gravity="center_vertical|left"
+        android:textSize="25dp"
+        android:singleLine="false" />
+
+</RelativeLayout>

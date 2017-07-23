@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="3"
+        android:rowCount="3"
+        tools:context="com.ipltd_bg.usistasksapp.fragment.LoginFragment">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_column="0"
+            android:layout_columnSpan="3"
+            android:layout_marginBottom="50dp"
+            android:layout_row="0"
+            android:src="@drawable/usis_logo" />
+
+        <Button
+            android:id="@+id/bLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:enabled="false"
+            android:text="Вход" />
+
+        <ImageButton
+            android:id="@+id/bScan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:background="@drawable/barcode"
+            android:enabled="true" />
+
+        <ImageButton
+            android:id="@+id/bNFC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:background="@drawable/nfc"
+            android:enabled="true" />
+
+        <EditText
+            android:id="@+id/tbCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnSpan="3"
+            android:layout_row="2"
+            android:enabled="true"
+            android:hint="Потребител" />
+    </GridLayout>
+</LinearLayout>
