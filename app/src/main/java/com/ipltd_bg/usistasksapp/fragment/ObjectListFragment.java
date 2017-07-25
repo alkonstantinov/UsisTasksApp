@@ -83,8 +83,7 @@ public class ObjectListFragment extends Fragment {
                             for (TaskListItem tli : MainActivity.getUpdatedTasks()) {
                                 TaskUpdateItem tui = new TaskUpdateItem();
                                 tui.setTaskId(tli.getTaskId());
-                                switch (tli.getTaskStatus())
-                                {
+                                switch (tli.getTaskStatus()) {
                                     case 1:
                                         tui.setTaskOffset(0);
                                         tui.setTaskStatus(3);
@@ -129,23 +128,26 @@ public class ObjectListFragment extends Fragment {
         final String routeCodeCurrentlySelected = MainActivity.getCurrentRoute().getCitRouteCode();
         List<TaskListItem> listFiltered = new LinkedList<TaskListItem>();
         for (TaskListItem t : MainActivity.getTasks()) {
-            if (t.getCitRouteCode().equals(routeCodeCurrentlySelected)) {
+
+            if (t.getCitRouteCode().equals(routeCodeCurrentlySelected) || this.showAllTasks) {
                 if (t.getTaskStatus() == 1 && Integer.parseInt(MainActivity.getSelectedObject()) == t.getPartnerEntityTo().getPartnerEntityCode()) {
                     listFiltered.add(t); //Задачата е започната и трябва да свърши в текущия обект
                 } else if (t.getTaskStatus() == 0 && Integer.parseInt(MainActivity.getSelectedObject()) == t.getPartnerEntityFrom().getPartnerEntityCode()) {
-                    listFiltered.add(t); //Задачата е започната и трябва да свърши в текущия обект
-                } else if (t.getTaskStatus() == 0 && Integer.parseInt(MainActivity.getSelectedObject()) == t.getPartnerEntityTo().getPartnerEntityCode() && this.showAllTasks) {
-                    listFiltered.add(t); //Задачата не е започната и трябва да свърши в текущия обект и е казано покажи вс. задачи
+                    listFiltered.add(t); //Задачата не е започната и трябва да започне в текущия обект
                 }
-
+//                else if (t.getTaskStatus() == 0 &&
+//                        (Integer.parseInt(MainActivity.getSelectedObject()) == t.getPartnerEntityTo().getPartnerEntityCode()
+//                                || Integer.parseInt(MainActivity.getSelectedObject()) == t.getPartnerEntityFrom().getPartnerEntityCode()) && this.showAllTasks) {
+//                    listFiltered.add(t); //Задачата не е започната и трябва да свърши в текущия обект и е казано покажи вс. задачи
+                //}
 
 
             }
-            else{
-                if (t.getTaskStatus() == 0 && Integer.parseInt(MainActivity.getSelectedObject()) == t.getPartnerEntityTo().getPartnerEntityCode() && this.showAllTasks) {
-                    listFiltered.add(t); //Задачата не е започната и трябва да свърши в текущия обект и е казано покажи вс. задачи
-                }
-            }
+//            else{
+//                if (t.getTaskStatus() == 0 && Integer.parseInt(MainActivity.getSelectedObject()) == t.getPartnerEntityTo().getPartnerEntityCode() && this.showAllTasks) {
+//                    listFiltered.add(t); //Задачата не е започната и трябва да свърши в текущия обект и е казано покажи вс. задачи
+//                }
+//            }
 
         }
 
