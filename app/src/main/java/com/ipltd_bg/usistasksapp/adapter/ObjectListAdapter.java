@@ -52,7 +52,7 @@ public class ObjectListAdapter extends android.widget.ArrayAdapter<TaskListItem>
         switch (task.getTaskStatus()) {
             case 0:
             case 3:
-            case 4:
+
                 btnProcess.setText("Стартирай");
                 btnProcess.setTextColor(Color.BLACK);
                 break;
@@ -60,6 +60,7 @@ public class ObjectListAdapter extends android.widget.ArrayAdapter<TaskListItem>
                 btnProcess.setText("Завърши");
                 btnProcess.setTextColor(Color.YELLOW);
                 break;
+            case 4:
             case 2:
                 v.setVisibility(View.INVISIBLE);
                 v.getLayoutParams().height = 1;
